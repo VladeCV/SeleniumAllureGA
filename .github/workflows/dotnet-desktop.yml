@@ -23,7 +23,7 @@ jobs:
                  ./scripts/InstallChrome.sh 
       - name: Build
         run: dotnet build --configuration Release --no-restore
-      - name: Execute API Test Cases
+      - name: Execute Selenium TC
         run: dotnet test --no-restore --verbosity normal
       - name: "Publish test results"
         uses: peaceiris/actions-gh-pages@v3.7.3
