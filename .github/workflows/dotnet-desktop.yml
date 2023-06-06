@@ -18,12 +18,10 @@ jobs:
           dotnet-version: ${{ matrix.dotnet-version }}
       - name: Install dependencies
         run: dotnet restore
-      - name: Install Chrome browser
-      - uses: actions/checkout@v3
       - name: Set chromedriver file permissions
-        run: | 
-              chmod +x .
-              ./src/resources/driver/chromedriver
+        run: |
+              chmod +x ./scripts/InstallChrome.sh
+              ./scripts/InstallChrome.sh
       - name: Build
         run: dotnet build --configuration Release --no-restore
       - name: Execute Selenium Test Case
