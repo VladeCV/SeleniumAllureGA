@@ -19,7 +19,7 @@ jobs:
       - name: Install dependencies
         run: dotnet restore
       - name: Install Chrome browser
-        run: chrome --version
+        uses: browser-actions/setup-chrome@v1
       - name: Build
         run: dotnet build --configuration Release --no-restore
       - name: Execute Selenium Test Case
