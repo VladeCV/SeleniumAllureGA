@@ -22,4 +22,20 @@
         <PackageReference Include="SpecFlow.Tools.MsBuild.Generation" Version="3.9.74" />
     </ItemGroup>
 
+    <ItemGroup>
+      <SpecFlowFeatureFiles Remove="src\code\test\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="src\code\test\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="src\code\test\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="src\code\test\**" />
+    </ItemGroup>
+
 </Project>

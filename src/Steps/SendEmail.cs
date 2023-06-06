@@ -1,6 +1,5 @@
 using SeleniumAllure.code.page.Yopmail;
 using SeleniumAllure.code.session;
-using SeleniumAllure.code.test.Email;
 using TechTalk.SpecFlow;
 
 namespace SeleniumAllure.Steps
@@ -8,7 +7,6 @@ namespace SeleniumAllure.Steps
     [Binding]
     public class SendEmail
     {
-        TestBase testBase = new TestBase();
         MainPage mainPage = new MainPage();
         Inbox inboxPage = new Inbox();
         EmailBody emailBody = new EmailBody();
@@ -26,7 +24,7 @@ namespace SeleniumAllure.Steps
         [Given(@"I have access to yopmail\.com")]
         public void GivenIHaveAccessToYopmail_Com()
         {
-            testBase.OpenBrowser();
+            Session.Instance().GetBrowser().Navigate().GoToUrl("https://yopmail.com/");
         }
 
         [When(@"I put my credentials")]
@@ -85,7 +83,7 @@ namespace SeleniumAllure.Steps
             //Assert.IsTrue(inboxPage.isEmailSubjectDisplayed(randomPhrase), "Email not found");
             Session.Instance().BackToPrincipal();
             inboxPage.refresInboxBtn.Click();
-            testBase.CloseBrowser();
+            Session.Instance().CloseBrowser();
         }
 
     }
