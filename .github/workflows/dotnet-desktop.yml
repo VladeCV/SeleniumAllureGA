@@ -22,7 +22,7 @@ jobs:
       - run: chrome --version
       - name: Build
         run: dotnet build --configuration Release --no-restore
-      - name: Execute Selenium TC
+      - name: Execute Selenium Test Case
         run: dotnet test --no-restore --verbosity normal
       - name: "Publish test selenium results"
         uses: peaceiris/actions-gh-pages@v3.7.3
