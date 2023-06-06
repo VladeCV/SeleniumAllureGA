@@ -18,12 +18,9 @@ jobs:
           dotnet-version: ${{ matrix.dotnet-version }}
       - name: Install dependencies
         run: dotnet restore
-      - name: Set chromedriver file permissions
-        run: |
-              sudo apt-get install -y google-chrome-stable
-              google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222
       - name: Build
         run: dotnet build --configuration Release --no-restore
+      - uses: browser-actions/setup-chrome@v1
       - name: Execute Selenium Test Case
         run: dotnet test --no-restore --verbosity normal
       - name: "Publish test selenium results"
