@@ -8,7 +8,9 @@ namespace SeleniumAllure.code.factoryBrowser
         public IWebDriver Create()
         { 
             var options = new ChromeOptions();
-            options.AddArgument("--headless=new");
+            options.AddArgument("--no-sandbox");
+            options.AddArgument("--disable-dev-shm-usage");
+            options.AddArgument("--headless");
             IWebDriver driver = new ChromeDriver(options);
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
             driver.Manage().Window.Maximize();
