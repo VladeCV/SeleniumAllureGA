@@ -20,8 +20,9 @@ jobs:
         run: dotnet restore
       - name: Set chromedriver file permissions
         run: |
-              chmod +x ./scripts/InstallChrome.sh
-              ./scripts/InstallChrome.sh
+              sudo apt-get update
+              sudo apt-get install -y google-chrome-stable
+              google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222
       - name: Build
         run: dotnet build --configuration Release --no-restore
       - name: Execute Selenium Test Case
