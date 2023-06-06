@@ -19,7 +19,10 @@ jobs:
       - name: Install dependencies
         run: dotnet restore
       - name: Install Chrome browser
-        uses: browser-actions/setup-chrome@v1
+      - uses: actions/checkout@v3
+      - run: | 
+              chmod +x .
+              ./src/resources/driver/chromedriver
       - name: Build
         run: dotnet build --configuration Release --no-restore
       - name: Execute Selenium Test Case
