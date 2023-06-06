@@ -34,7 +34,7 @@ jobs:
           user_name: VladeCV
           user_email: vladimircabrecabri@gmail.com
           publish_branch: gh_page
-      - name: Test marketplace action
+      - name: Test action
         uses: simple-elf/allure-report-action@master
         if: always()
         id: allure-report
