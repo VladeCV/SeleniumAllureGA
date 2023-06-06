@@ -24,7 +24,7 @@ jobs:
         run: dotnet build --configuration Release --no-restore
       - name: Execute Selenium TC
         run: dotnet test --no-restore --verbosity normal
-      - name: "Publish test results"
+      - name: "Publish test selenium results"
         uses: peaceiris/actions-gh-pages@v3.7.3
         if: ${{ always() }}
         with:
