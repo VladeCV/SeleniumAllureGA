@@ -20,9 +20,9 @@ jobs:
         run: dotnet restore
       - name: Install Chrome browser
       - uses: actions/checkout@v3
-      - run: | 
-              chmod +x .
-              ./src/resources/driver/chromedriver
+      - name: Set chromedriver file permissions
+        run: chmod +x .
+            ./src/resources/driver/chromedriver
       - name: Build
         run: dotnet build --configuration Release --no-restore
       - name: Execute Selenium Test Case
