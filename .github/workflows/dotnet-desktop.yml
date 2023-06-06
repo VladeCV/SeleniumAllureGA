@@ -20,7 +20,6 @@ jobs:
         run: dotnet restore
       - name: Set chromedriver file permissions
         run: |
-              sudo apt-get update
               sudo apt-get install -y google-chrome-stable
               google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222
       - name: Build
