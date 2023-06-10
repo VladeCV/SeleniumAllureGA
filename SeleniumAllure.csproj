@@ -185,7 +185,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="src\Resources\Driver\" />
+      <Folder Include="src\resources\driver\" />
     </ItemGroup>
 
 </Project>
