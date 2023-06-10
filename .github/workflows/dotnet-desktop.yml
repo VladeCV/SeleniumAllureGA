@@ -31,7 +31,7 @@ jobs:
           google-chrome-stable --headless --disable-gpu
 
       - name: Establecer permisos de archivo chromedriver
-        run: sudo chmod +x ./src/resources/driver
+        run: sudo chmod +x ./SeleniumAllure/src/resources/driver
 
       - name: Compilar
         run: dotnet build --configuration Release --no-restore

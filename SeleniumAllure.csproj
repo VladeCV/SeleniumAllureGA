@@ -39,6 +39,9 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Content Include="..\..\.nuget\packages\specflow.allure\3.5.0.73\contentFiles\any\netstandard2.0\allureConfig.Template.json">
+        <Link>SeleniumAllure\allureConfig.Template.json</Link>
+      </Content>
       <Content Include="bin\Debug\net6.0\allure-results\03016d8747cc44a286528f76a52e4d89-container.json" />
       <Content Include="bin\Debug\net6.0\allure-results\05bda0a1350e4319b9eb92ef16c4fa79-container.json" />
       <Content Include="bin\Debug\net6.0\allure-results\118fd62150d442e3bb9d356c357ee4e4-container.json" />
@@ -185,7 +188,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="src\resources\driver\" />
+      <EditorConfigFiles Include="SeleniumAllure\obj\Debug\net6.0\SeleniumAllure.GeneratedMSBuildEditorConfig.editorconfig" />
     </ItemGroup>
 
 </Project>
