@@ -9,6 +9,7 @@ namespace SeleniumAllure.code.factoryBrowser
         { 
             var options = new ChromeOptions();
             options.AddArgument("--no-sandbox");
+            options.AddArgument("--disable-gpu");
             options.AddArgument("--disable-dev-shm-usage");
             options.AddArgument("--headless");
             IWebDriver driver = new ChromeDriver(options);

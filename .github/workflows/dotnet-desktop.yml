@@ -12,20 +12,33 @@ jobs:
     
     steps:
       - uses: actions/checkout@v3
+        
       - name: Setup .NET Core SDK ${{ matrix.dotnet-version }}
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: ${{ matrix.dotnet-version }}
+      
       - name: Install dependencies
         run: dotnet restore
+
+      - name: Install Chrome browser
+        run: |
+            sudo apt-get update
+            sudo apt-get install -y google-chrome-stable
+            google-chrome-stable --headless --disable-gpu
+
+      - name: Grant authorizations to chromedriver
+        run: sudo chmod +x ./YopMail_CI_CD/src/resources/driver
+      
       - name: Build
         run: dotnet build --configuration Release --no-restore
-      - uses: browser-actions/setup-chrome@v1
+      
       - name: Execute Selenium Test Case
         run: dotnet test --no-restore --verbosity normal
-      - name: "Publish test selenium results"
+      
+      - name: Publish test selenium results
         uses: peaceiris/actions-gh-pages@v3.7.3
-        if: ${{ always() }}
+        if: always()
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: './SeleniumAllure/bin/Debug/net6.0/allure-results'
@@ -33,6 +46,7 @@ jobs:
           user_name: VladeCV
           user_email: vladimircabrecabri@gmail.com
           publish_branch: gh_page
+      
       - name: Test action
         uses: simple-elf/allure-report-action@master
         if: always()
@@ -41,6 +55,7 @@ jobs:
           allure_results: './SeleniumAllure/bin/Debug/net6.0/allure-results'
           gh_pages: gh-pages
           allure_report: allure-report
+      
       - name: Deploy report to Github Pages
         if: always()
         uses: peaceiris/actions-gh-pages@v2
