@@ -28,7 +28,7 @@ jobs:
             google-chrome-stable --headless --disable-gpu
 
       - name: Grant authorizations to chromedriver
-        run: sudo chmod +x ./SeleniumAllure/src/Resources/Driver
+        run: sudo chmod +x ./SeleniumAllureGA/src/Resources/Driver
       
       - name: Build
         run: dotnet build --configuration Release --no-restore
