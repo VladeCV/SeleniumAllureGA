@@ -1,42 +1,45 @@
 name: dotnet package
 
-on: [ push ]
+on:
+  push:
+    branches:
+      - master
 
 jobs:
   build:
-    
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        dotnet-version: [ '6.0.x' ]
-    
+        dotnet-version: ['6.0.x']
+
     steps:
-      - uses: actions/checkout@v2
-        
-      - name: Setup .NET Core SDK ${{ matrix.dotnet-version }}
+      - name: Checkout código fuente
+        uses: actions/checkout@v2
+
+      - name: Configurar .NET Core SDK ${{ matrix.dotnet-version }}
         uses: actions/setup-dotnet@v2
         with:
           dotnet-version: ${{ matrix.dotnet-version }}
-      
-      - name: Install dependencies
+
+      - name: Instalar dependencias
         run: dotnet restore
 
-      - name: Install Chrome browser
+      - name: Instalar Chrome browser
         run: |
-            sudo apt-get update
-            sudo apt-get install -y google-chrome-stable
-            google-chrome-stable --headless --disable-gpu
+          sudo apt-get update
+          sudo apt-get install -y google-chrome-stable
+          google-chrome-stable --headless --disable-gpu
 
-      - name: Grant authorizations to chromedriver
+      - name: Establecer permisos de archivo chromedriver
         run: sudo chmod +x ./src/resources/driver
-      
-      - name: Build
+
+      - name: Compilar
         run: dotnet build --configuration Release --no-restore
-      
-      - name: Execute Selenium Test Case
+
+      - name: Ejecutar casos de prueba de Selenium
         run: dotnet test --no-restore --verbosity normal
-      
-      - name: Publish test selenium results
+
+      - name: Publicar resultados de pruebas de Selenium
         uses: peaceiris/actions-gh-pages@v3.7.3
         if: always()
         with:
@@ -45,9 +48,9 @@ jobs:
           keep_files: true
           user_name: VladeCV
           user_email: vladimircabrecabri@gmail.com
-          publish_branch: gh_page
-      
-      - name: Test action
+          publish_branch: gh-pages
+
+      - name: Acción de generación de informe de Allure
         uses: simple-elf/allure-report-action@master
         if: always()
         id: allure-report
@@ -55,11 +58,11 @@ jobs:
           allure_results: './SeleniumAllure/bin/Debug/net6.0/allure-results'
           gh_pages: gh-pages
           allure_report: allure-report
-      
-      - name: Deploy report to Github Pages
+
+      - name: Desplegar informe en Github Pages
         if: always()
         uses: peaceiris/actions-gh-pages@v2
         env:
           PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PUBLISH_BRANCH: gh-pages
-          PUBLISH_DIR: allure-report    
+          PUBLISH_DIR: allure-report 
