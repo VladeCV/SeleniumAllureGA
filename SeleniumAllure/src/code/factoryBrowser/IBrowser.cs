@@ -1,6 +1,6 @@
 ﻿using OpenQA.Selenium;
 
-namespace SeleniumAllure.code.factoryBrowser
+namespace SeleniumAllure.SeleniumAllure.code.factoryBrowser
 {
     public interface IBrowser
     {

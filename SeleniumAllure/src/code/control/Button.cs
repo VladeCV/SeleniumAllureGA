@@ -1,6 +1,6 @@
 ﻿using OpenQA.Selenium;
 
-namespace SeleniumAllure.code.control;
+namespace SeleniumAllure.SeleniumAllure.code.control;
 
 public class Button : ControlSelenium
 {

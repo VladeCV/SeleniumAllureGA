@@ -1,7 +1,7 @@
 ﻿using OpenQA.Selenium;
-using SeleniumAllure.code.control;
+using SeleniumAllure.SeleniumAllure.code.control;
 
-namespace SeleniumAllure.code.page.Todoist
+namespace SeleniumAllure.SeleniumAllure.code.page.Todoist
 {
     public class MainPage
     {

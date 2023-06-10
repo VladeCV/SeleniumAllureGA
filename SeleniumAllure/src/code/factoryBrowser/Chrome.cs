@@ -1,7 +1,8 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using SeleniumAllure.code.factoryBrowser;
 
-namespace SeleniumAllure.code.factoryBrowser
+namespace SeleniumAllure.SeleniumAllure.code.factoryBrowser
 {
     public class Chrome : IBrowser
     {

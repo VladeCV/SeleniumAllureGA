@@ -1,7 +1,7 @@
 ﻿using OpenQA.Selenium;
-using SeleniumAllure.code.control;
+using SeleniumAllure.SeleniumAllure.code.control;
 
-namespace SeleniumAllure.code.page.Yopmail
+namespace SeleniumAllure.SeleniumAllure.code.page.Yopmail
 {
     public class Inbox
     {

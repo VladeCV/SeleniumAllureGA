@@ -1,8 +1,8 @@
-using SeleniumAllure.code.page.Yopmail;
-using SeleniumAllure.code.session;
+using SeleniumAllure.SeleniumAllure.code.page.Yopmail;
+using SeleniumAllure.SeleniumAllure.code.session;
 using TechTalk.SpecFlow;
 
-namespace SeleniumAllure.Steps
+namespace SeleniumAllure.SeleniumAllure.Steps
 {
     [Binding]
     public class SendEmail

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SeleniumAllure.code.factoryBrowser
+namespace SeleniumAllure.SeleniumAllure.code.factoryBrowser
 {
     public class Edge : IBrowser
     {

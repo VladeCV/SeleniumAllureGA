@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SeleniumAllure.code.factoryBrowser;
+using SeleniumAllure.SeleniumAllure.code.factoryBrowser;
 
 namespace SeleniumAllure.code.factoryBrowser
 {

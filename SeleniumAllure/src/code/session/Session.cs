@@ -1,7 +1,7 @@
 ﻿using OpenQA.Selenium;
 using SeleniumAllure.code.factoryBrowser;
 
-namespace SeleniumAllure.code.session
+namespace SeleniumAllure.SeleniumAllure.code.session
 {
     public class Session
     {

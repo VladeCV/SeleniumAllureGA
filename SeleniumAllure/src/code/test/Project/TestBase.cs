@@ -1,6 +1,6 @@
-﻿using SeleniumAllure.code.session;
+﻿using SeleniumAllure.SeleniumAllure.code.session;
 
-namespace SeleniumAllure.code.test.Project
+namespace SeleniumAllure.SeleniumAllure.code.test.Project
 {
     [TestFixture]
     public class TestBase

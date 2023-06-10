@@ -1,7 +1,7 @@
 ﻿using OpenQA.Selenium;
-using SeleniumAllure.code.session;
+using SeleniumAllure.SeleniumAllure.code.session;
 
-namespace SeleniumAllure.code.control
+namespace SeleniumAllure.SeleniumAllure.code.control
 {
     public class ControlSelenium
     {
