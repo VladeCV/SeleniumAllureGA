@@ -184,4 +184,8 @@
       <Content Include="bin\Debug\net6.0\zh-Hant\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="src\Resources\Driver\" />
+    </ItemGroup>
+
 </Project>
